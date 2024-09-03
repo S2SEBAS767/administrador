@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buscar usuario</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <h1>BUSCAR USUARIO</h1>
+            <ul>
+                <li><a href="paginaadministrador.html">INICIO</a></li>
+                <li><a href="MODIFICAR RECOMPESA.html">Modificar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Escribe el numero de Identificación...">
+        <button id="search-button">Buscar</button>
+    </div>
+
+    <div id="user-info" class="user-info">
+        <h2 id="user-name"></h2>
+        <p id="user-points"></p>
+        <p id="user-num"></p>
+        <div class="vehicles">
+            <div class="vehicle">
+                <img src="vehiculos/Dominar 400.jpeg" alt="Vehículo 1">
+                <div class="vehicle-info">
+                    <p><strong>Marca:</strong> pulsar Dominar 400</p>
+                    <p><strong>Modelo:</strong> 2025</p>
+                    <p><strong>Placa:</strong> ZFH57R</p>
+                    <P><STRONG>Puntos:</STRONG>200000</P>
+                </div>
+            </div>
+            <div class="vehicle">
+                <img src="vehiculos/maclaren p1.jpeg" alt="Vehículo 2">
+                <div class="vehicle-info">
+                    <p><strong>Marca:</strong> MCLAREN P1</p>
+                    <p><strong>Modelo:</strong> 2025</p>
+                    <p><strong>Placa:</strong> DEF456</p>
+                    <P><STRONG>Puntos:</STRONG>30000</P>
+                </div>
+            </div>
+            <div class="vehicle">
+                <img src="vehiculos/ktm duke.jpeg" alt="Vehículo 3">
+                <div class="vehicle-info">
+                    <p><strong>Marca:</strong> KTM</p>
+                    <p><strong>Modelo:</strong> 2025</p>
+                    <p><strong>Placa:</strong> GHI789</p>
+                    <P><STRONG>Puntos:</STRONG>100000</P>
+                </div>
+            </div>
+            <div class="vehicle">
+                <img src="vehiculos/kia 2025.jpeg" alt="Vehículo 4">
+                <div class="vehicle-info">
+                    <p><strong>Marca:</strong> KIA RIO</p>
+                    <p><strong>Modelo:</strong> 2025</p>
+                    <p><strong>Placa:</strong> JKL012</p>
+                    <P><STRONG>Puntos:</STRONG>900000</P>
+                </div>
+            </div>
+        </div>
+        <h1>4 vehiculos registrados</h1>
+    </div>
+    <script>
+        document.getElementById('search-button').addEventListener('click', function () {
+            const userName = 'sebastian leon';
+            const userPoints = 1016595662;
+
+
+            document.getElementById('user-name').textContent = 'Nombre: ' + userName;
+            document.getElementById('user-points').textContent = 'NUMERO DE IDENTIFICACION: ' + userPoints;
+            document.getElementById('user-info').style.display = 'block';
+
+        });
+        if (users[input]) {
+            document.getElementById('user-name').textContent = 'Nombre: ' + users[input].name;
+            document.getElementById('user-points').textContent = 'Puntos acumulados: ' + users[input].points;
+            userInfo.style.display = 'block';
+            errorMessage.textContent = '';
+        } else {
+            userInfo.style.display = 'none';
+            errorMessage.textContent = 'Usuario no encontrado';
+        }
+
+        document.getElementById('search-button').addEventListener('click', function () {
+            const userName = 'andres galindo';
+            const userPoints = 1234;
+
+
+            document.getElementById('user-name').textContent = 'Nombre: ' + userName;
+            document.getElementById('user-points').textContent = 'NUMERO DE IDENTIFICACION: ' + userPoints;
+            document.getElementById('user-info').style.display = 'block';
+
+        });
+
+    </script>
+</body>
+
+</html>

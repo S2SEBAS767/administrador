@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Recompensas</title>
+    <link rel="stylesheet" href="Recompesa.css">
+</head>
+<link rel="icon" href="logoecomovil.png" type="icon">
+
+<body>
+
+    <header>
+        <nav>
+            <h1>PANEL DE MODIFICAR RECOMPESA</h1>
+            <ul>
+                <li><a href="paginaadministrador.html">INICIO</a></li>
+                <li><a href="rol.html">BUSCAR USUARIO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="recompensas-container">
+            <div class="recompensa">
+                <img src="bono imagenes/bono terpel.jpeg" alt="bono terpel" class="recompensa-img">
+                <div class="detalle">
+                    <h3>bono terpel de 15.000</h3>
+                    <p>Detalles: 10% de descuento en cualquier compra de gasolina</p>
+                    <div class="botones">
+                        <button onclick="modifyPoints('points1', -10, 'bono terpel')">-</button>
+                        <span id="points1">100</span> puntos
+                        <button onclick="modifyPoints('points1', 10, 'bono terpel')">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recompensa">
+                <img src="bono imagenes/bono de falabella.png" alt="bono falabella" class="recompensa-img">
+                <div class="detalle">
+                    <h3>bono falabella</h3>
+                    <p>bono de descuento en falabella</p>
+                    <div class="botones">
+                        <button onclick="modifyPoints('points2', -5, 'bono falabella')">-</button>
+                        <span id="points2">50</span> puntos
+                        <button onclick="modifyPoints('points2', 5, 'bono falabella')">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recompensa">
+                <img src="bono imagenes/tarjeta de regalo de exito.jpeg" alt="Cupón de regalo" class="recompensa-img">
+                <div class="detalle">
+                    <h3>tarjeta de regalo exito</h3>
+                    <p>Detalles: tajerta de regalo de 100.000 en compras </p>
+                    <div class="botones">
+                        <button onclick="modifyPoints('points3', -15, 'tarjeta exito')">-</button>
+                        <span id="points3">150</span> puntos
+                        <button onclick="modifyPoints('points3', 15, 'tarjeta exito')">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recompensa">
+                <img src="bono imagenes/tarjeta de regalo spotify.jpeg" alt="tarjeta spotify" class="recompensa-img">
+                <div class="detalle">
+                    <h3>tarjeta spotify</h3>
+                    <p>Detalles: Acceso exclusivo en spotify</p>
+                    <div class="botones">
+                        <button onclick="modifyPoints('points4', -20, 'tarjeta spotify')">-</button>
+                        <span id="points4">200</span> puntos
+                        <button onclick="modifyPoints('points4', 20, 'tarjeta spotify')">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function modifyPoints(id, change, rewardName) {
+            const pointsElement = document.getElementById(id);
+            let currentPoints = parseInt(pointsElement.innerText);
+            currentPoints += change;
+
+            if (currentPoints < 0) {
+                currentPoints = 0;
+            }
+
+            pointsElement.innerText = currentPoints;
+
+            const notification = document.getElementById('notification');
+            notification.innerText = `La recompensa "${rewardName}" ha sido modificada en ${change} puntos. Ahora tiene ${currentPoints} puntos.`;
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+    <div class="notification" id="notification"></div>
+    <footer>
+        <div class="footer-container">
+            <div class="info">
+                <h3>Centro Administrativo Distrital:</h3>
+                <p>Lunes a Jueves de 7:30 a. m. a 12:00 m. y de 1:30 p. m. a 5:00 p. m.</p>
+                <p>Viernes de 7:30 a. m. a 12:00 m. y de 1:30 p. m. a 4:00 p. m.</p>
+                <h3>Oficinas de Servicios Tributarios La Alpujarra:</h3>
+                <p>Lunes a Jueves de 7:30 a. m. a 5:00 p. m. y viernes de 7:30 a. m. a 4:00 p. m.</p>
+                <h3>Centro de Servicios a la Ciudadanía La Alpujarra – Sótano:</h3>
+                <p>Lunes a Jueves de 7:30 a. m. a 5:30 p. m. y Viernes de 7:30 a. m. a 4:30 p. m. (jornada continua).
+                </p>
+                <h3>Dirección:</h3>
+                <p>Calle 44 # 52 - 165, Centro Administrativo La Alpujarra, Medellín, Colombia</p>
+            </div>
+            <div class="contacto">
+                <h3>Correo Portal:</h3>
+                <h3>Correo institucional para la recepción de solicitudes de información:</h3>
+                <p>atencion.ciudadana@medellin.gov.co</p>
+                <h3>Correo exclusivo para la notificación de conciliaciones extrajudiciales:</h3>
+                <p>noti.procuraduria@medellin.gov.co</p>
+                <h3>Correo exclusivo para la notificación de acciones de tutela:</h3>
+                <p>tutelas.medellin@medellin.gov.co</p>
+            </div>
+            <div class="redes-sociales">
+                <h3>Redes Sociales</h3>
+                <p>ECOMOVIL</p>
+                <div class="social-icons">
+                    <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="iconoX.png" alt="X"></a>
+                    <a href="#"><img src="logotipo-de-instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="youtube.png" alt="YouTube"></a>
+                    <a href="#"><img src="video.png" alt="TikTok"></a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
